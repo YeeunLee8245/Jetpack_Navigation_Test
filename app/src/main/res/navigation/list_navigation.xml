@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_fragment"
+    app:startDestination="@id/leader_board_fragment">
+
+    <fragment
+        android:id="@+id/leader_board_fragment"
+        android:name="kr.co.yeeun.lee.demoi.testbottomnavigation.listscreen.LeaderBoardFragment"
+        android:label="@string/title_leader_board"
+        tools:layout="@layout/fragment_leader_board">
+        <action
+            android:id="@+id/action_leaderboard_to_boardnext"
+            app:destination="@id/board_next_fragment"/>
+        <action
+            android:id="@+id/action_leaderboard_to_storedbackstack"
+            app:restoreState="true"
+            app:destination="@id/board_next_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/board_next_fragment"
+        android:name="kr.co.yeeun.lee.demoi.testbottomnavigation.listscreen.BoardNextFragment"
+        android:label="@string/title_board_next"
+        tools:layout="@layout/fragment_board_next">
+        <argument
+            android:name="myargument"
+            app:argType="string"
+            android:defaultValue="defaultValue!"/>
+        <action
+            android:id="@+id/action_boardnext_to_userprofile"
+            app:destination="@+id/user_profile"/>
+    </fragment>
+    <fragment
+        android:id="@+id/user_profile"
+        android:name="kr.co.yeeun.lee.demoi.testbottomnavigation.listscreen.UserProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_user_profile">
+        <action
+            android:id="@+id/action_userprofile_to_leaderboard"
+            app:destination="@+id/leader_board_fragment"
+            app:popUpTo="@id/leader_board_fragment"
+            app:popUpToSaveState="true" />
+    </fragment>
+
+</navigation>

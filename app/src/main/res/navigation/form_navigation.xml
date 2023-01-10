@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/form_fragment"
+    app:startDestination="@id/main_fragment">
+
+    <fragment
+        android:id="@+id/main_fragment"
+        android:name="kr.co.yeeun.lee.demoi.testbottomnavigation.formscreen.MainFragment"
+        android:label="@string/title_main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_main_to_registered"
+            app:destination="@+id/registered_fragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="kr.co.yeeun.lee.demoi.testbottomnavigation.formscreen.LoginFragment"
+        android:label="@string/title_login"
+        tools:layout="@layout/fragment_login">
+    </fragment>
+    <fragment
+        android:id="@+id/registered_fragment"
+        android:name="kr.co.yeeun.lee.demoi.testbottomnavigation.formscreen.RegisteredFragment"
+        android:label="@string/title_registered"
+        tools:layout="@layout/fragment_registered">
+    </fragment>
+
+</navigation>
